@@ -1,4 +1,4 @@
 cmake_minimum_required(VERSION 2.8)
-project(textio)
+project(libtextio)
 
-add_library(textio ReadTextFile)
+add_library(libtextio ReadTextFile)
