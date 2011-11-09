@@ -1,5 +1,5 @@
 /*
- * Read.cpp
+ * ReadTextFile.cpp
  *
  *  Created on: Feb 18, 2011
  *      Author: bkloppenborg
