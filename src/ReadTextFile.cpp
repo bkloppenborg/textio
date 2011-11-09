@@ -11,6 +11,8 @@
 #include <stdexcept>
 #include <vector>
 #include <algorithm>
+#include <streambuf>
+
 
 #include "ReadTextFile.h"
 
@@ -49,6 +51,36 @@ void StripWhitespace(vector<string> & strings)
     }
 }
 
+/// Reads in a file, returns entire contents as a standard, null-terminated, string.
+string ReadFile(string filename, string error_message)
+{
+	string str;
+
+    ifstream infile;
+    infile.open(filename.c_str());
+
+    if(infile.is_open())
+    {
+		// Determine the size of the file, allocate that much space on str
+		infile.seekg(0, std::ios::end);
+		str.reserve(infile.tellg());
+		// Seek to the start of the file
+		infile.seekg(0, std::ios::beg);
+
+		// Now read in the entire file.
+		str.assign((std::istreambuf_iterator<char>(infile)),
+					std::istreambuf_iterator<char>());
+    }
+    else
+    {
+        /// \exception runtime_error Error opening array file
+        /// The file could not be located.  It is likely that the user just specified an invalid path.
+        throw std::runtime_error(error_message);
+    }
+
+	return str;
+}
+
 /// Reads in a file, returns non-comment lines as a vector of strings
 /// If the file cannot be opened, an exception is thrown with the message contained in error_message
 vector<string> ReadFile(string filename, string comment_chars, string error_message)
@@ -77,7 +109,7 @@ vector<string> ReadFile(string filename, string comment_chars, string error_mess
     else
     {
         /// \exception runtime_error Error opening array file
-        /// The array file could not be located.  It is likely that the user just specified an invalid path.
+        /// The file could not be located.  It is likely that the user just specified an invalid path.
         throw std::runtime_error(error_message);
     }
 

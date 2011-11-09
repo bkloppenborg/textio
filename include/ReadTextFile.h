@@ -15,7 +15,9 @@ using namespace std;
 void 	StringSplit(string str, string delim, vector<string> & results);
 string 	StripWhitespace(string str);
 void 	StripWhitespace(vector<string> & strings);
-vector<string> ReadFile(string filename, string comment_chars, string error_message);
+
+string 			ReadFile(string filename, string error_message);
+vector<string> 	ReadFile(string filename, string comment_chars, string error_message);
 
 vector<string> Tokenize(string line);
 vector<string> Tokenize(string line, vector< vector<int> > split_locations);
