@@ -21,7 +21,7 @@ using namespace std;
 // A simple string splitting function for use with delimiters
 void StringSplit(string str, string delim, vector<string> & results)
 {
-    int cutAt;
+    unsigned int cutAt;
     while( (cutAt = str.find_first_of(delim)) != str.npos )
     {
         if(cutAt > 0)
