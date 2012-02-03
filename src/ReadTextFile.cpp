@@ -141,7 +141,7 @@ vector<string> Tokenize(string line, vector< vector<int> > split_info)
 
 	vector< vector<int> >::iterator it;
 
-	for (int i = 0; i < split_info.size(); i++)
+	for (unsigned int i = 0; i < split_info.size(); i++)
 	{
 		start = split_info[i][0];
 		n_chars = split_info[i][1];
