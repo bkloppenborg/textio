@@ -139,8 +139,6 @@ vector<string> Tokenize(string line, vector< vector<int> > split_info)
 	string tmp;
 	int start, n_chars;
 
-	int i_prior;
-
 	vector< vector<int> >::iterator it;
 
 	for (int i = 0; i < split_info.size(); i++)
