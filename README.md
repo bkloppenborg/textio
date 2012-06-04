@@ -1,4 +1,5 @@
-liboi
-=====
+======
+textio
+======
 
-OpenCL Interferometry Library
+Simple text input/output
