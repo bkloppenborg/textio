@@ -4,7 +4,7 @@ project(textio)
 #set(CMAKE_BUILD_TYPE Release)
 #set(CMAKE_BUILD_TYPE Debug)
 
-include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 SET(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
 

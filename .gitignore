@@ -17,6 +17,6 @@
 # Various source locations:
 lib/*
 build/*
-.cproject
-.project
-.settings/
+!/.cproject
+!/.project
+!/.settings/
