@@ -28,4 +28,4 @@ project(textio)
 add_library(textio SHARED ReadTextFile)
 
 install(TARGETS textio DESTINATION lib)
-install(FILES ReadTextFile.h DESTINATION includes RENAME textio.h)
+install(FILES ReadTextFile.h DESTINATION include RENAME textio.h)
