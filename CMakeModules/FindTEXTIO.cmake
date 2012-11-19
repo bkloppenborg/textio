@@ -10,7 +10,7 @@ FIND_LIBRARY(TEXTIO_LIBRARY
     DOC "TEXTIO library.")
 
 FIND_PATH(TEXTIO_INCLUDE_DIR 
-    NAMES includes/textio.h
+    NAMES textio.h
     HINTS ${TEXTIO_HINT}/include ${CMAKE_INSTALL_PREFIX}/include
     DOC "TEXTIO include directory.")
 
