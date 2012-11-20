@@ -37,8 +37,7 @@
 #include <algorithm>
 #include <streambuf>
 
-
-#include "ReadTextFile.h"
+#include "textio.hpp"
 
 using namespace std;
 

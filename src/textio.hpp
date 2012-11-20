@@ -1,5 +1,5 @@
 /*
- * Read.h
+ * textio.h
  *
  *  Created on: Feb 18, 2011
  *      Author: bkloppenborg
