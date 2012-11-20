@@ -26,6 +26,7 @@ cmake_minimum_required(VERSION 2.8)
 project(textio)
 
 add_library(textio SHARED ReadTextFile)
+add_library(textio_static STATIC ReadTextFile)
 
 install(TARGETS textio DESTINATION lib)
 install(FILES textio.h DESTINATION include)
