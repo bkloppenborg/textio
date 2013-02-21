@@ -41,6 +41,23 @@
 
 using namespace std;
 
+vector<string> &SplitString(const string &s, char delim, vector<string> &elems)
+{
+    stringstream ss(s);
+    string item;
+    while(std::getline(ss, item, delim)) {
+        elems.push_back(item);
+    }
+    return elems;
+}
+
+
+vector<string> SplitString(const string &s, char delim)
+{
+    vector<string> elems;
+    return SplitString(s, delim, elems);
+}
+
 // A simple string splitting function for use with delimiters
 void StringSplit(string str, string delim, vector<string> & results)
 {
