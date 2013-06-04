@@ -84,11 +84,25 @@ string StripWhitespace(string str)
 
 void StripWhitespace(vector<string> & strings)
 {
-    // Remove any remaining white space.
-    for(unsigned int i = 0; i < strings.size(); i++)
-    {
-        strings[i] = StripWhitespace(strings[i]);
-    }
+	unsigned int end = strings.size();
+	for(int i = 0; i < end; i++)
+	{
+		// Strip all whitespace from the beginning and end of the string.
+		strings[i] = StripWhitespace(strings[i]);
+
+		// Remove the element from the vector if it is empty.
+		if(strings[i].size() == 0)
+		{
+			strings.erase(strings.begin() + i);
+			end--;
+		}
+	}
+
+
+//    for(unsigned int i = 0; i < strings.size(); i++)
+//    {
+//        strings[i] = StripWhitespace(strings[i]);
+//    }
 }
 
 /// Reads in a file, returns entire contents as a standard, null-terminated, string.
