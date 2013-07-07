@@ -36,7 +36,7 @@
 #include <string>
 using namespace std;
 
-vector<string> &SplitString(const string &s, char delim, vector<string> &elems);
+//vector<string> &SplitString(const string &s, char delim, vector<string> &elems);
 vector<string> SplitString(const string &s, char delim);
 
 void 	StringSplit(string str, string delim, vector<string> & results);
