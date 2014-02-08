@@ -1,0 +1,12 @@
+language: cpp
+
+compiler:
+  - gcc
+  - clang
+  
+script: 
+  - cd build
+  - cmake ..
+  - make
+  - make install
+
