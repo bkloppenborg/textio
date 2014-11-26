@@ -29,4 +29,13 @@ add_library(textio SHARED ReadTextFile)
 add_library(textio_static STATIC ReadTextFile)
 
 install(TARGETS textio DESTINATION lib)
-install(FILES textio.h DESTINATION include)
+install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/textio.hpp" DESTINATION include)
+
+# Automatic packaging
+SET(CPACK_GENERATOR "DEB")
+SET(CPACK_PACKAGE_NAME "textio")
+SET(CPACK_PACKAGE_VERSION 1.0.0)
+SET(CPACK_PACKAGE_CONTACT "Brian Kloppenborg <bkloppenborg@gmail.com>")
+SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Simple text input/output library (https://github.com/bkloppenborg/textio)")
+
+INCLUDE(CPack)
