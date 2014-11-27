@@ -1,0 +1,7 @@
+#ifndef LIBOI_VERSION_H
+#define LIBOI_VERSION_H
+
+#define LIBOI_VERSION  "1.0.0"
+#define LIBOI_REVISION "dd33a22"
+
+#endif // LIBOI_VERSION_H
