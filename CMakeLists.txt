@@ -26,7 +26,7 @@ EXECUTE_PROCESS(
 # General settings
 SET(CPACK_GENERATOR "DEB")
 SET(CPACK_PACKAGE_NAME "textio")
-SET(CPACK_PACKAGE_VERSION 1.0.0)
+SET(CPACK_PACKAGE_VERSION ${GIT_VERSION_TAG})
 SET(CPACK_PACKAGE_CONTACT "Brian Kloppenborg <bkloppenborg@gmail.com>")
 SET(CPACK_PACKAGE_DESCRIPTION "Simple text input/output implementing file reading, string splitting, and tokenizing")
 SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Simple text input/output library (https://github.com/bkloppenborg/textio)")
