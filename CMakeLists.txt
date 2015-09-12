@@ -9,6 +9,10 @@ INCLUDE("${CMAKE_SOURCE_DIR}/CMakeModules/SetVersion.cmake")
 
 SET(LIBRARY_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/lib")
 
+IF(CMAKE_COMPILER_IS_GNUCC)
+    ADD_DEFINITIONS(-Wall -Wextra -Wshadow)
+ENDIF()
+
 # CMake subdirectories
 add_subdirectory(src)
 

@@ -85,7 +85,7 @@ string StripWhitespace(string str)
 void StripWhitespace(vector<string> & strings)
 {
 	unsigned int end = strings.size();
-	for(int i = 0; i < end; i++)
+	for(size_t i = 0; i < end; i++)
 	{
 		// Strip all whitespace from the beginning and end of the string.
 		strings[i] = StripWhitespace(strings[i]);
