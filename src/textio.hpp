@@ -39,14 +39,14 @@ using namespace std;
 //vector<string> &SplitString(const string &s, char delim, vector<string> &elems);
 vector<string> SplitString(const string &s, char delim);
 
-void 	StringSplit(string str, string delim, vector<string> & results);
+void 	StringSplit(const string &str, const string &delim, vector<string> & results);
 string 	StripWhitespace(string str);
 void 	StripWhitespace(vector<string> & strings);
-string ReadFile(string filename, string error_message);
-vector<string> ReadFile(string filename, string comment_chars, string error_message);
+string ReadFile(const string &filename, const string &error_message);
+vector<string> ReadFile(const string &filename, const string &comment_chars, const string &error_message);
 
-vector<string> Tokenize(string line);
-vector<string> Tokenize(string line, vector< vector<int> > split_locations);
+vector<string> Tokenize(const string &line);
+vector<string> Tokenize(const string &line, const vector< vector<int> > & split_locations);
 
 bool 	FileExists(string filename);
 

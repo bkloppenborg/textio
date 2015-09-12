@@ -41,47 +41,34 @@
 
 using namespace std;
 
-vector<string> &SplitString(const string &s, char delim, vector<string> &elems)
+/// Split string `s` when the specified delimeter is found. Results are stored
+/// in elems
+void SplitString(const string &s, char delim, vector<string> &elems)
 {
     stringstream ss(s);
     string item;
     while(std::getline(ss, item, delim)) {
         elems.push_back(item);
     }
-    return elems;
 }
 
-
+/// Split string `s` when the specified delimeter is found.
+/// Results are returned as a vector<string>
 vector<string> SplitString(const string &s, char delim)
 {
     vector<string> elems;
-    return SplitString(s, delim, elems);
+    SplitString(s, delim, elems);
+    return elems;
 }
 
-// A simple string splitting function for use with delimiters
-//void StringSplit(string str, string delim, vector<string> & results)
-//{
-//    unsigned int cutAt;
-//    while( (cutAt = str.find_first_of(delim)) != str.npos )
-//    {
-//        if(cutAt > 0)
-//            results.push_back(str.substr(0,cutAt));
-//
-//        str = str.substr(cutAt+1);
-//    }
-//
-//    // Push any remaining characters on to the back of the vector.
-//    if(str.length() > 0)
-//        results.push_back(str);
-//}
-
+/// Removes whitespace from the specified string.
 string StripWhitespace(string str)
 {
     str.erase(remove_if(str.begin(), str.end(), ::isspace), str.end());
     return str;
 }
 
-
+/// Removes whitespace from a vector of strings
 void StripWhitespace(vector<string> & strings)
 {
 	unsigned int end = strings.size();
@@ -97,16 +84,10 @@ void StripWhitespace(vector<string> & strings)
 			end--;
 		}
 	}
-
-
-//    for(unsigned int i = 0; i < strings.size(); i++)
-//    {
-//        strings[i] = StripWhitespace(strings[i]);
-//    }
 }
 
 /// Reads in a file, returns entire contents as a standard, null-terminated, string.
-string ReadFile(string filename, string error_message)
+string ReadFile(const string &filename, const string &error_message)
 {
 	string str;
 
@@ -137,7 +118,7 @@ string ReadFile(string filename, string error_message)
 
 /// Reads in a file, returns non-comment lines as a vector of strings
 /// If the file cannot be opened, an exception is thrown with the message contained in error_message
-vector<string> ReadFile(string filename, string comment_chars, string error_message)
+vector<string> ReadFile(const string &filename, const string &comment_chars, const string &error_message)
 {
     ifstream infile;
     infile.open(filename.c_str());
@@ -171,7 +152,7 @@ vector<string> ReadFile(string filename, string comment_chars, string error_mess
 }
 
 // Tokenizes a line.
-vector<string> Tokenize(string line)
+vector<string> Tokenize(const string &line)
 {
     istringstream lineStream(line);
 
@@ -187,7 +168,7 @@ vector<string> Tokenize(string line)
     return tokens;
 }
 
-vector<string> Tokenize(string line, vector< vector<int> > split_info)
+vector<string> Tokenize(const string &line, const vector< vector<int> > & split_info)
 {
 	vector <string> tokens;
 	string tmp;
@@ -209,7 +190,7 @@ vector<string> Tokenize(string line, vector< vector<int> > split_info)
 }
 
 // See if a file exists.  Returns true if it does.
-bool FileExists(string filename)
+bool FileExists(const string &filename)
 {
   ifstream ifile(filename.c_str());
   return bool(ifile);
